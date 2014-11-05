@@ -1,0 +1,26 @@
+<xsd:schema xmlns:tns="http://cxf.oobj.com.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://cxf.oobj.com.br/">
+  <xsd:element name="imprimirNotaDaEmpresa" type="tns:imprimirNotaDaEmpresa"/>
+  <xsd:complexType name="imprimirNotaDaEmpresa">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="empresa" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="imprimirNotaDaEmpresaResponse" type="tns:imprimirNotaDaEmpresaResponse"/>
+  <xsd:complexType name="imprimirNotaDaEmpresaResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="return" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="consomeXML" type="tns:consomeXML"/>
+  <xsd:complexType name="consomeXML">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="nfeEmXML" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="consomeXMLResponse" type="tns:consomeXMLResponse"/>
+  <xsd:complexType name="consomeXMLResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="return" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

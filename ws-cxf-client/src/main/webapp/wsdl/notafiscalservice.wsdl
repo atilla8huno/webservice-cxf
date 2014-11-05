@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="NotaFiscalService" targetNamespace="http://cxf.oobj.com.br/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://cxf.oobj.com.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://cxf.oobj.com.br/" schemaLocation="notafiscalservice_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="consomeXMLResponse">
+    <wsdl:part name="parameters" element="tns:consomeXMLResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="imprimirNotaDaEmpresa">
+    <wsdl:part name="parameters" element="tns:imprimirNotaDaEmpresa">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consomeXML">
+    <wsdl:part name="parameters" element="tns:consomeXML">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="imprimirNotaDaEmpresaResponse">
+    <wsdl:part name="parameters" element="tns:imprimirNotaDaEmpresaResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="NotaFiscalServicePortType">
+    <wsdl:operation name="imprimirNotaDaEmpresa">
+      <wsdl:input name="imprimirNotaDaEmpresa" message="tns:imprimirNotaDaEmpresa">
+    </wsdl:input>
+      <wsdl:output name="imprimirNotaDaEmpresaResponse" message="tns:imprimirNotaDaEmpresaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consomeXML">
+      <wsdl:input name="consomeXML" message="tns:consomeXML">
+    </wsdl:input>
+      <wsdl:output name="consomeXMLResponse" message="tns:consomeXMLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NotaFiscalServiceSoapBinding" type="tns:NotaFiscalServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="imprimirNotaDaEmpresa">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="imprimirNotaDaEmpresa">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="imprimirNotaDaEmpresaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consomeXML">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consomeXML">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consomeXMLResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NotaFiscalService">
+    <wsdl:port name="NotaFiscalServicePort" binding="tns:NotaFiscalServiceSoapBinding">
+      <soap:address location="http://localhost:8080/ws-cxf-server/services/NotaFiscalServicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
